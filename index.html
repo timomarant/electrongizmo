@@ -33,7 +33,7 @@
     <h1>Electron Auto Update Example</h1>
     <p id="version"></p>
     <div id="notification"
-         class="hidden">
+        >
         <p id="message"></p>
         <button id="close-button"
                 onClick="closeNotification()">
@@ -41,7 +41,7 @@
         </button>
         <button id="restart-button"
                 onClick="restartApp()"
-                class="hidden">
+                >
             Restart
         </button>
     </div>
@@ -65,7 +65,7 @@
             message.innerText = 'A new update is available. Downloading now...';
             notification.classList.remove('hidden');
         });
-        
+
         ipcRenderer.on('update_downloaded', () => {
             ipcRenderer.removeAllListeners('update_downloaded');
             message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
